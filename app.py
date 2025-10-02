@@ -16,12 +16,12 @@ with open("random_forest_model.pkl", "rb") as f:
 
 st.title("Random Forest 예측기")
 
-feature1 = st.number_input("가입 기간(월)", value=0.0)
-feature2 = st.number_input("지난달 컴플레인 여부", value=0.0)
-feature3 = st.number_input("선호 카테고리", value=0.0)
+Tenure = st.number_input("Tenure", value=0)
+Complain = st.number_input("Complain", value=0)
+PreferedOrderCat = st.number_input("PreferedOrderCat", value=0)
 
 if st.button("예측하기"):
 
-    X = pd.DataFrame([[feature1, feature2, feature3]], columns=["가입 기간(월)", "지난달 컴플레인 여부", "선호 카테고리"])
+    X = pd.DataFrame([[Tenure, Complain, PreferedOrderCat]], columns=["가입 기간(월)", "Complain", "PreferedOrderCat"])
     pred = model.predict(X)[0]
     st.success(f"예측 결과: {pred}")
