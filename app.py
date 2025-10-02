@@ -14,7 +14,7 @@ import pandas as pd
 with open("random_forest_model.pkl", "rb") as f:
     model = pickle.load(f)
 
-st.title("Random Forest 예측기")
+st.title("Ecommerce Customer Churn Analysis and Prediction-Random Forest 예측기")
 
 Tenure = st.number_input("가입 기간(월)", value=0)
 Complain = st.number_input("지난달 컴플레인 여부", value=0)
